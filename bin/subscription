@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'pathname'
+require 'fileutils'
+require_relative '../store_kit'
+
+key_id = File.basename(ENV['KEY'], File.extname(ENV['KEY'])).split('_').last
+ENV['KEY_ID'] = key_id
+
+StoreKit.new(
+  private_key: File.read("#{Dir.pwd}/keys/#{ENV['KEY']}"),
+  issuer_id: '69a6de82-48b4-47e3-e053-5b8c7c11a4d1', # change issuer id to yours!
+  original_transaction_id: ENV['OTI'],
+  key_id: key_id,
+  bundle_id: 'com.apphud' # change bundle id to yours!
+).call
