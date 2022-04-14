@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/pwnedkeys/openssl-additions.git
-  revision: ddda2f5b86a1c9bec2627e07928895a4608b9970
-  specs:
-    openssl-additions (0.0.0.1.NOGVB)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -26,6 +20,7 @@ GEM
     mime-types-data (3.2021.0225)
     minitest (5.14.4)
     multi_xml (0.6.0)
+    openssl-additions (0.7.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     zeitwerk (2.4.2)
@@ -38,7 +33,7 @@ DEPENDENCIES
   byebug
   httparty
   jwt
-  openssl-additions!
+  openssl-additions
 
 RUBY VERSION
    ruby 2.7.3p183

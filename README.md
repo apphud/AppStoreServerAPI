@@ -6,7 +6,7 @@
 4. If you have errors with your ruby version, change in `.ruby-version` and `Gemfile` files to your Ruby version.
 5. Call in the terminal:
 
-`OTI=ORIGINAL_TRANSACTION_ID KEY=SubscriptionKey_YOURKEYID.p8.p8 bin/subscription`
+`OTI=ORIGINAL_TRANSACTION_ID KEY=SubscriptionKey_YOURKEYID.p8 bin/subscription`
+`ENDPOINT=/v1/apps KEY=AuthKey_YZ6X5BRP9U.p8 bin/start`
 
 where `ORIGINAL_TRANSACTION_ID` is your original transaction id and `YOURKEYID` is your Key ID.
-

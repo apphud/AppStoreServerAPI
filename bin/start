@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'pathname'
+require 'fileutils'
+require 'byebug'
+require_relative '../api'
+
+key_id = File.basename(ENV['KEY'], File.extname(ENV['KEY'])).split('_').last
+ENV['KEY_ID'] = key_id
+
+StoreKitAPI.new(
+  private_key: File.read("#{Dir.pwd}/keys/#{ENV['KEY']}"),
+  issuer_id: '12699374-f586-4333-8a5e-4f439f2f5291', # change issuer id to yours!
+  key_id: key_id,
+  endpoint: ENV['ENDPOINT']
+).call
