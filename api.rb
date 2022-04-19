@@ -43,10 +43,20 @@ class StoreKitAPI
   def request!
     url = format(HOST, endpoint: endpoint)
     result = HTTP.get(url, headers: { 'Authorization' => "Bearer #{jwt}" })
-    # raise UnauthenticatedError if result.code == 401
-    # raise ForbiddenError if result.code == 403
+    raise UnauthenticatedError if result.code == 401
+    raise ForbiddenError if result.code == 403
+
+    save_to_file!(result) if result['content-type'] == 'application/a-gzip'
 
     result.parsed_response
+  end
+
+  def save_to_file!(data)
+    filename = File.join(Dir.pwd, 'downloads', "report-#{rand(999)}.gzip")
+
+    File.open(filename, 'w') do |file|
+      file.write(data)
+    end
   end
 
   def jwt

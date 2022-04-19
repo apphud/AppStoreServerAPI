@@ -7,6 +7,6 @@
 5. Call in the terminal:
 
 `OTI=ORIGINAL_TRANSACTION_ID KEY=SubscriptionKey_YOURKEYID.p8 bin/subscription`
-`ENDPOINT=/v1/apps KEY=AuthKey_YZ6X5BRP9U.p8 bin/start`
+`ISS=3ac3c13e-68bc-4d3d-8310-a7339bbbba44 ENDPOINT=/v1/apps KEY=AuthKey_YZ6X5BRP9U.p8 bin/start`
 
 where `ORIGINAL_TRANSACTION_ID` is your original transaction id and `YOURKEYID` is your Key ID.

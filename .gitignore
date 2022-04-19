@@ -1,2 +1,4 @@
 .DS_Store
 /keys/*.p8
+.byebug_history
+/downloads/**/*
